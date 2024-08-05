@@ -1,16 +1,18 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ContaTerminal {
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Por favor, digite o número da Agência!");
-        String agencia = scanner.nextLine();
-
-        System.out.println("Por favor, digite o número da Conta!");
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        
+        System.out.println("Por favor, digite o número:");
         int numero = scanner.nextInt();
 
+        // Consumir a quebra de linha deixada pelo nextInt()
         scanner.nextLine();
+
+        System.out.println("Por favor, digite a Agência!");
+        String agencia = scanner.nextLine();
 
         System.out.println("Por favor, digite o nome do Cliente!");
         String nomeCliente = scanner.nextLine();
